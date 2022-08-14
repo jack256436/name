@@ -1,0 +1,36 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Ash's My Restaurant Hub", HidePremium = true, SaveConfig = false, IntroEnabled = false, ConfigFolder = "Ash's Hub"})
+
+OrionLib:MakeNotification({
+    Name = "Loaded",
+    Content = "Successfully Loaded",
+    Image = "rbxassetid://8950621656",
+    Time = 5
+})
+
+local Main = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://8950621656",
+    PremiumOnly = false
+})
+
+local Player = Window:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://5480743826",
+    PremiumOnly = false
+})
+
+Main:AddButton({
+    Name = "Farm",
+    Callback = function()
+              getgenv().fpsBoost = false
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/My-Restaurant!-Fast-Autofarm-4610"))()
+OrionLib:MakeNotification({
+    Name = "Executed",
+    Content = "Successfully Executed",
+    Image = "rbxassetid://8950621656",
+    Time = 5
+})
+      end    
+})
